@@ -1,0 +1,22 @@
+<p>cep works!</p>
+
+<h2>Pesquisa de CEP</h2>
+
+<div>
+  <label for="cepInput">CEP:</label>
+  <input id="cepInput" type="text" [(ngModel)]="cep" placeholder="Digite o CEP">
+  <button (click)="consultarCep()">Pesquisar</button>
+</div>
+
+<div *ngIf="endereco">
+  <h3>Informações do CEP:</h3>
+  <ul>
+    <li><strong>CEP:</strong> {{ endereco.cep }}</li>
+    <li><strong>Rua:</strong> {{ endereco.rua }}</li>
+    <li><strong>Complemento:</strong> {{ endereco.complemento }}</li>
+    <li><strong>Bairro:</strong> {{ endereco.bairro }}</li>
+    <li><strong>Cidade:</strong> {{ endereco.cidade }}</li>
+    <li><strong>Estado:</strong> {{ endereco.estado }}</li>
+    <li><strong>DDD:</strong> {{ endereco.ddd }}</li>
+  </ul>
+</div>
