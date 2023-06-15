@@ -1,16 +1,14 @@
-<p>cep works!</p>
+<h2 class="title">Pesquisa de CEP</h2>
 
-<h2>Pesquisa de CEP</h2>
-
-<div>
-  <label for="cepInput">CEP:</label>
-  <input id="cepInput" type="text" [(ngModel)]="cep" placeholder="Digite o CEP">
-  <button (click)="consultarCep()">Pesquisar</button>
+<div class="form-container">
+  <label for="cepInput" class="label">CEP:</label>
+  <input id="cepInput" type="text" [(ngModel)]="cep" placeholder="Digite o CEP" class="input">
+  <button (click)="consultarCep()" class="button">Pesquisar</button>
 </div>
 
-<div *ngIf="endereco">
-  <h3>Informações do CEP:</h3>
-  <ul>
+<div *ngIf="endereco" class="result-container">
+  <h3 class="result-title">Informações do CEP:</h3>
+  <ul class="result-list">
     <li><strong>CEP:</strong> {{ endereco.cep }}</li>
     <li><strong>Rua:</strong> {{ endereco.rua }}</li>
     <li><strong>Complemento:</strong> {{ endereco.complemento }}</li>

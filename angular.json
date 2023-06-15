@@ -71,7 +71,8 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "fed-public-api:build"
+            "browserTarget": "fed-public-api:build",
+            "proxyConfig": "proxy.conf.json"
           }
         },
         "test": {
