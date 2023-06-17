@@ -18,3 +18,7 @@
     <li><strong>DDD:</strong> {{ endereco.ddd }}</li>
   </ul>
 </div>
+
+<div *ngIf="cepInvalido" class="error-message">
+  CEP inválido! Digite um CEP válido com 8 dígitos.
+</div>

@@ -11,6 +11,7 @@ export class CepComponent implements OnInit{
 
   cep: string = '';
   endereco!: EnderecoResponse;
+  cepInvalido: boolean = false;
 
   constructor(private http: HttpClient) {
    }
@@ -19,18 +20,23 @@ export class CepComponent implements OnInit{
   }
 
   consultarCep(): void {
-    if (this.cep.length !== 8) {
-      return;
+    
+    if (this.cep && this.cep.length === 8) {
+
+      const apiUrl = `/api/consulta/cep/${this.cep}`;
+      this.http.get(apiUrl).subscribe(
+        (data: any) => {
+          this.endereco = data;
+        },
+        (error) => {
+          //implementar ação
+        }
+      );
+
+    this.cepInvalido = false;  
+    } else {
+      this.cepInvalido = true;
     }
 
-    const apiUrl = `/api/consulta/cep/${this.cep}`;
-    this.http.get(apiUrl).subscribe(
-      (data: any) => {
-        this.endereco = data;
-      },
-      (error) => {
-        //implementar ação
-      }
-    );
   }
 }
