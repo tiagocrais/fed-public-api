@@ -6,7 +6,7 @@
   <button (click)="consultarCep()" class="button">Pesquisar</button>
 </div>
 
-<div *ngIf="endereco" class="result-container">
+<div *ngIf="endereco && !cepInvalido && !erro" class="result-container">
   <h3 class="result-title">Informações do CEP:</h3>
   <ul class="result-list">
     <li><strong>CEP:</strong> {{ endereco.cep }}</li>
@@ -21,4 +21,8 @@
 
 <div *ngIf="cepInvalido" class="error-message">
   CEP inválido! Digite um CEP válido com 8 dígitos.
+</div>
+
+<div *ngIf="erro" class="error-message">
+  O endereço para o cep não foi encontrado! Tente outro.
 </div>

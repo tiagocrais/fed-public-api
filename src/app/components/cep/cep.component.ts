@@ -12,6 +12,7 @@ export class CepComponent implements OnInit{
   cep: string = '';
   endereco!: EnderecoResponse;
   cepInvalido: boolean = false;
+  erro: string = '';
 
   constructor(private http: HttpClient) {
    }
@@ -21,6 +22,11 @@ export class CepComponent implements OnInit{
 
   consultarCep(): void {
     
+    if (this.erro || this.endereco) {
+      this.erro = '';
+      this.endereco = new EnderecoResponse("", "", "", "", "", "", "");
+    }
+
     if (this.cep && this.cep.length === 8) {
 
       const apiUrl = `/api/consulta/cep/${this.cep}`;
@@ -29,7 +35,8 @@ export class CepComponent implements OnInit{
           this.endereco = data;
         },
         (error) => {
-          //implementar ação
+          
+          this.erro = error;
         }
       );
 
