@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ListRenderComponent } from './list-render.component';
+import { CepListaComponent } from './cep-lista.component';
 
 describe('ListRenderComponent', () => {
-  let component: ListRenderComponent;
-  let fixture: ComponentFixture<ListRenderComponent>;
+  let component: CepListaComponent;
+  let fixture: ComponentFixture<CepListaComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [ListRenderComponent]
+      declarations: [CepListaComponent]
     });
-    fixture = TestBed.createComponent(ListRenderComponent);
+    fixture = TestBed.createComponent(CepListaComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

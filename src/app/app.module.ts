@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { CepComponent } from './components/cep/cep.component';
 import { AppRoutingModule } from './app-routing.module';
-import { ListRenderComponent } from './components/list-render/list-render.component';
+import { CepListaComponent } from './components/cep-lista/cep-lista.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -12,7 +12,7 @@ import { HttpClientModule } from '@angular/common/http';
   declarations: [
     AppComponent,
     CepComponent,
-    ListRenderComponent
+    CepListaComponent
   ],
   imports: [
     BrowserModule,
