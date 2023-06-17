@@ -62,11 +62,31 @@
   }
   
   .result-list li {
-    margin-bottom: 5px;
+    margin-bottom: 10px;
   }
   
   .result-list li strong {
     font-weight: bold;
+  }
+
+  .result-list li span {
+    color: #555;
+  }
+
+  .result-list li:nth-child(odd) {
+    background-color: #f9f9f9;
+    padding: 5px;
+    border-radius: 3px;
+  }
+
+  .result-list li:nth-child(even) {
+    background-color: #f0f0f0;
+    padding: 5px;
+    border-radius: 3px;
+  }
+
+  .result-list li:last-child {
+    margin-bottom: 0;
   }
 
   .error-message {
