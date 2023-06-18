@@ -1,1 +1,26 @@
-<p>cep-lista works!</p>
+<div>
+    <h2>Pesquisa de Endereço</h2>
+    <label for="estado">Estado:</label>
+    <input type="text" id="estado" [(ngModel)]="estado">
+    <label for="cidade">Cidade:</label>
+    <input type="text" id="cidade" [(ngModel)]="cidade">
+    <label for="logradouro">Logradouro:</label>
+    <input type="text" id="logradouro" [(ngModel)]="logradouro">
+    <button (click)="pesquisarEndereco()">Pesquisar</button>
+  </div>
+  
+  <div *ngIf="enderecos && enderecos.length > 0">
+    <h3>Resultados da Pesquisa:</h3>
+    <ul>
+      <li *ngFor="let endereco of enderecos">
+        <p>CEP: {{ endereco.cep }}</p>
+        <p>Rua: {{ endereco.rua }}</p>
+        <p>Complemento: {{ endereco.complemento }}</p>
+        <p>Bairro: {{ endereco.bairro }}</p>
+        <p>Cidade: {{ endereco.cidade }}</p>
+        <p>Estado: {{ endereco.estado }}</p>
+        <p>DDD: {{ endereco.ddd }}</p>
+      </li>
+    </ul>
+  </div>
+  

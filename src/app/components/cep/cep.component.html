@@ -4,6 +4,8 @@
   <label for="cepInput" class="label">CEP:</label>
   <input id="cepInput" type="text" [(ngModel)]="cep" placeholder="Digite o CEP" class="input">
   <button (click)="consultarCep()" class="button">Pesquisar</button>
+  <button (click)="naoSeiCep()" class="button button-secondary">Não sei o cep</button>
+
 </div>
 
 <div *ngIf="endereco && !cepInvalido && !erro" class="result-container">

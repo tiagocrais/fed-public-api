@@ -1,11 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { EnderecoResponse } from 'src/app/models/enderecoResponse';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cep',
   templateUrl: './cep.component.html',
-  styleUrls: ['./cep.component.css']
+  styleUrls: ['./cep.component.css'],
+  template: `
+  <a (click)="naoSeiCep()">Não sei o cep</a>
+`
 })
 export class CepComponent implements OnInit{
 
@@ -14,7 +18,7 @@ export class CepComponent implements OnInit{
   cepInvalido: boolean = false;
   erro: string = '';
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private router: Router) {
    }
 
   ngOnInit(): void {
@@ -45,5 +49,10 @@ export class CepComponent implements OnInit{
       this.cepInvalido = true;
     }
 
+  }
+
+  naoSeiCep() {
+    
+    this.router.navigate(['/lista']);
   }
 }
