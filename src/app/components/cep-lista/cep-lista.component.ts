@@ -1,16 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { EnderecoResponse } from 'src/app/models/enderecoResponse';
-
-interface Endereco {
-  cep: string;
-  rua: string;
-  complemento: string;
-  bairro: string;
-  cidade: string;
-  estado: string;
-  ddd: string;
-}
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cep-lista',
@@ -25,7 +16,7 @@ export class CepListaComponent {
   enderecos: EnderecoResponse[] = [];
   erro: string = '';
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private router: Router) {}
 
   pesquisarEndereco(): void {
     
@@ -39,5 +30,10 @@ export class CepListaComponent {
       
       this.erro = error;
     });    
+  }
+
+  pesquisarPorCep() {
+    
+    this.router.navigate(['']);
   }
 }

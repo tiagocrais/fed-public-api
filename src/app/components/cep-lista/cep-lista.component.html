@@ -1,25 +1,28 @@
-<div>
-    <h2>Pesquisa de Endereço</h2>
-    <label for="estado">Estado:</label>
-    <input type="text" id="estado" [(ngModel)]="estado">
-    <label for="cidade">Cidade:</label>
-    <input type="text" id="cidade" [(ngModel)]="cidade">
-    <label for="logradouro">Logradouro:</label>
-    <input type="text" id="logradouro" [(ngModel)]="logradouro">
-    <button (click)="pesquisarEndereco()">Pesquisar</button>
+<div class="container">
+    <h2 class="title">Pesquisa de Endereço</h2>
+    <div class="form-group">
+      <label for="estado">Estado:</label>
+      <input type="text" id="estado" class="input" [(ngModel)]="estado">
+      <label for="cidade">Cidade:</label>
+      <input type="text" id="cidade" class="input" [(ngModel)]="cidade">
+      <label for="logradouro">Logradouro:</label>
+      <input type="text" id="logradouro" class="input" [(ngModel)]="logradouro">
+      <button class="button" (click)="pesquisarEndereco()">Pesquisar</button>
+      <button class="button" (click)="pesquisarPorCep()">Pesquisar Cep</button>
+    </div>
   </div>
   
-  <div *ngIf="enderecos && enderecos.length > 0">
-    <h3>Resultados da Pesquisa:</h3>
-    <ul>
-      <li *ngFor="let endereco of enderecos">
-        <p>CEP: {{ endereco.cep }}</p>
-        <p>Rua: {{ endereco.rua }}</p>
-        <p>Complemento: {{ endereco.complemento }}</p>
-        <p>Bairro: {{ endereco.bairro }}</p>
-        <p>Cidade: {{ endereco.cidade }}</p>
-        <p>Estado: {{ endereco.estado }}</p>
-        <p>DDD: {{ endereco.ddd }}</p>
+  <div *ngIf="enderecos && enderecos.length > 0" class="container">
+    <h3 class="sub-title">Resultados da Pesquisa:</h3>
+    <ul class="address-list">
+      <li *ngFor="let endereco of enderecos" class="address-item">
+        <p><strong>CEP:</strong> {{ endereco.cep }}</p>
+        <p><strong>Rua:</strong> {{ endereco.rua }}</p>
+        <p><strong>Complemento:</strong> {{ endereco.complemento }}</p>
+        <p><strong>Bairro:</strong> {{ endereco.bairro }}</p>
+        <p><strong>Cidade:</strong> {{ endereco.cidade }}</p>
+        <p><strong>Estado:</strong> {{ endereco.estado }}</p>
+        <p><strong>DDD:</strong> {{ endereco.ddd }}</p>
       </li>
     </ul>
   </div>
