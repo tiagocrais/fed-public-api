@@ -57,3 +57,7 @@
     font-size: 14px;
     margin-top: 5px;
   }
+
+  .campo-invalido {
+    border: 1px solid red;
+  }

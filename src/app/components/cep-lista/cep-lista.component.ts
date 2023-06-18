@@ -21,8 +21,30 @@ export class CepListaComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  pesquisarEndereco(): void {
+  validarPreenchimento(): void {
     
+    if (!this.estado || !this.cidade || !this.logradouro) {
+      if (!this.estado) {
+        document.getElementById('estado')?.classList.add('campo-invalido');
+      }
+      if (!this.cidade) {
+        document.getElementById('cidade')?.classList.add('campo-invalido');
+      }
+      if (!this.logradouro) {
+        document.getElementById('logradouro')?.classList.add('campo-invalido');
+      }
+      return;
+    }
+    
+    document.getElementById('estado')?.classList.remove('campo-invalido');
+    document.getElementById('cidade')?.classList.remove('campo-invalido');
+    document.getElementById('logradouro')?.classList.remove('campo-invalido');
+
+    this.consultarEndereco();    
+  }
+
+  consultarEndereco() {
+
     if (this.erro || this.enderecos) {
       this.erro = '';
       this.enderecos = [];
@@ -37,7 +59,7 @@ export class CepListaComponent implements OnInit {
     (error) => {
       
       this.erro = error;
-    });    
+    });
   }
 
   pesquisarPorCep() {

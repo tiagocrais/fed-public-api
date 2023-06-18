@@ -7,7 +7,7 @@
       <input type="text" id="cidade" class="input" [(ngModel)]="cidade">
       <label for="logradouro">Logradouro:</label>
       <input type="text" id="logradouro" class="input" [(ngModel)]="logradouro">
-      <button class="button" (click)="pesquisarEndereco()">Pesquisar</button>
+      <button class="button" (click)="validarPreenchimento()">Pesquisar</button>
       <button class="button" (click)="pesquisarPorCep()">Pesquisar Cep</button>
     </div>
   </div>
@@ -28,6 +28,6 @@
   </div>
 
   <div *ngIf="erro" class="error-message">
-    Nenhum endereço relacionado foi encontrado! Por favor tente outro.
+    Nenhum endereço relacionado foi encontrado! Por favor, tente novamente.
   </div>
   
