@@ -6,10 +6,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-cep',
   templateUrl: './cep.component.html',
-  styleUrls: ['./cep.component.css'],
-  template: `
-  <a (click)="naoSeiCep()">Não sei o cep</a>
-`
+  styleUrls: ['./cep.component.css']
 })
 export class CepComponent implements OnInit{
 

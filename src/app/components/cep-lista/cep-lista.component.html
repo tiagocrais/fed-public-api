@@ -12,7 +12,7 @@
     </div>
   </div>
   
-  <div *ngIf="enderecos && enderecos.length > 0" class="container">
+  <div *ngIf="enderecos && enderecos.length > 0 && !erro" class="container">
     <h3 class="sub-title">Resultados da Pesquisa:</h3>
     <ul class="address-list">
       <li *ngFor="let endereco of enderecos" class="address-item">
@@ -25,5 +25,9 @@
         <p><strong>DDD:</strong> {{ endereco.ddd }}</p>
       </li>
     </ul>
+  </div>
+
+  <div *ngIf="erro" class="error-message">
+    Nenhum endereço relacionado foi encontrado! Por favor tente outro.
   </div>
   
