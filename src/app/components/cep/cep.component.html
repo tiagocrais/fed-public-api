@@ -1,9 +1,11 @@
-<h2 class="title">Pesquisa de CEP</h2>
+<div class="title-background">
+  <h2 class="title">Pesquisa de CEP</h2>
+</div>
 
 <div class="form-container">
   <label for="cepInput" class="label">CEP:</label>
-  <input id="cepInput" type="text" [(ngModel)]="cep" placeholder="Digite o CEP" class="input">
-  <button (click)="consultarCep()" class="button">Pesquisar</button>
+  <input id="cepInput" type="text" [(ngModel)]="cep" placeholder="Digite o CEP" class="input cep-input">
+  <button (click)="consultarCep()" class="button pesquisa-button">Pesquisar</button>
   <button (click)="naoSeiCep()" class="button button-secondary">Não sei o cep</button>
 
 </div>

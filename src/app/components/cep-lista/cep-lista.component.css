@@ -2,9 +2,15 @@
     margin: 20px;
   }
   
+  .title-background {
+    background-color: #4CAF50;
+    padding: 10px;
+  }
+  
   .title {
     font-size: 24px;
-    margin-bottom: 10px;
+    color: white;
+    margin: 0;
   }
   
   .sub-title {
@@ -14,8 +20,18 @@
   }
   
   .form-group {
-    margin-bottom: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
   }
+
+  .logradouro-input {
+    margin-right: 5px;
+  }
+
+  .pesquisa-button {
+    margin-left: 5px;
+  }
+  
   
   .label {
     display: block;
@@ -52,6 +68,14 @@
     padding: 10px;
   }
 
+  .address-item-even {
+    background-color: #F4F4F4;
+  }
+
+  .address-item-odd {
+    background-color: #E8E8E8;
+  }
+
   .error-message {
     color: red;
     font-size: 14px;
@@ -68,9 +92,13 @@
     margin-top: 5px;
     margin-left: 5px;
     margin-right: 5px;
+    background-color: #FFECEC;
+    padding: 2px 5px;
+    display: inline-block;
   }
 
   .campo-selecionado {
     border: 1px solid blue;
+    background-color: #E6F3FF;
   }
   

@@ -1,6 +1,13 @@
+.title-background {
+  background-color: #4CAF50;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
 .title {
     font-size: 24px;
-    margin-bottom: 20px;
+    color: white;
+    margin: 0;
   }
   
   .form-container {
@@ -11,6 +18,14 @@
   
   .label {
     margin-right: 10px;
+  }
+
+  .cep-input {
+    margin-right: 5px;
+  }
+
+  .pesquisa-button {
+    margin-left: 5px;
   }
   
   .input {
