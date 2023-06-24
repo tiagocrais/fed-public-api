@@ -2,11 +2,14 @@
     <h2 class="title">Pesquisa de Endereço</h2>
     <div class="form-group">
       <label for="estado">Estado:</label>
-      <input type="text" id="estado" class="input" [(ngModel)]="estado">
+      <input type="text" id="estado" class="input" [(ngModel)]="estado" (focus)="campoSelecionado('estado')" (blur)="campoDesselecionado('estado')" [ngClass]="{'campo-invalido': !estado && exibirMensagemEstado, 'campo-selecionado': campoSelecionadoId === 'estado'}">
+      <span *ngIf="!estado && exibirMensagemEstado" class="campo-obrigatorio">Campo obrigatório</span>
       <label for="cidade">Cidade:</label>
-      <input type="text" id="cidade" class="input" [(ngModel)]="cidade">
+      <input type="text" id="cidade" class="input" [(ngModel)]="cidade" (focus)="campoSelecionado('cidade')" (blur)="campoDesselecionado('cidade')" [ngClass]="{'campo-invalido': !cidade && exibirMensagemCidade, 'campo-selecionado': campoSelecionadoId === 'cidade'}">
+      <span *ngIf="!cidade && exibirMensagemCidade" class="campo-obrigatorio">Campo obrigatório</span>
       <label for="logradouro">Logradouro:</label>
-      <input type="text" id="logradouro" class="input" [(ngModel)]="logradouro">
+      <input type="text" id="logradouro" class="input" [(ngModel)]="logradouro" (focus)="campoSelecionado('logradouro')" (blur)="campoDesselecionado('logradouro')" [ngClass]="{'campo-invalido': !logradouro && exibirMensagemLogradouro, 'campo-selecionado': campoSelecionadoId === 'logradouro'}">
+      <span *ngIf="!logradouro && exibirMensagemLogradouro" class="campo-obrigatorio">Campo obrigatório</span>
       <button class="button" (click)="validarPreenchimento()">Pesquisar</button>
       <button class="button" (click)="pesquisarPorCep()">Pesquisar Cep</button>
     </div>

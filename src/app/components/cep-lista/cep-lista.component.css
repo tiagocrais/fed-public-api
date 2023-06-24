@@ -61,3 +61,16 @@
   .campo-invalido {
     border: 1px solid red;
   }
+
+  .campo-obrigatorio {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+
+  .campo-selecionado {
+    border: 1px solid blue;
+  }
+  

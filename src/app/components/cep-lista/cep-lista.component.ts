@@ -15,10 +15,26 @@ export class CepListaComponent implements OnInit {
   logradouro: string = '';
   enderecos: EnderecoResponse[] = [];
   erro: string = '';
+  exibirMensagemEstado: boolean = false;
+  exibirMensagemCidade: boolean = false;
+  exibirMensagemLogradouro: boolean = false;
+  campoSelecionadoId: string = '';
 
   constructor(private http: HttpClient, private router: Router) {}
 
   ngOnInit(): void {
+  }
+
+  campoSelecionado(campoId: string): void {
+    
+    this.campoSelecionadoId = campoId;
+  }
+  
+  campoDesselecionado(campoId: string): void {
+    
+    if (this.campoSelecionadoId === campoId) {
+      this.campoSelecionadoId = '';
+    }
   }
 
   validarPreenchimento(): void {
@@ -26,12 +42,15 @@ export class CepListaComponent implements OnInit {
     if (!this.estado || !this.cidade || !this.logradouro) {
       if (!this.estado) {
         document.getElementById('estado')?.classList.add('campo-invalido');
+        this.exibirMensagemEstado = true;
       }
       if (!this.cidade) {
         document.getElementById('cidade')?.classList.add('campo-invalido');
+        this.exibirMensagemCidade = true;
       }
       if (!this.logradouro) {
         document.getElementById('logradouro')?.classList.add('campo-invalido');
+        this.exibirMensagemLogradouro = true;
       }
       return;
     }
