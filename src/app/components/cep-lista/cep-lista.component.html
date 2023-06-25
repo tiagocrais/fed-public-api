@@ -22,7 +22,9 @@
     <div class="filter-container">
       <input type="text" [(ngModel)]="filtro" placeholder="Filtrar rua" class="filter-input">
       <button (click)="aplicarFiltro()" class="button filter-button">Filtrar</button>
-      <button (click)="limparFiltro()" class="button filter-button">Limpar</button>
+      <button (click)="limparFiltro()" class="button filter-button">
+        <i class="fas fa-broom"></i>
+      </button>
     </div>
     <ul class="address-list">
       <li *ngFor="let endereco of enderecos; let i = index" class="address-item" [ngClass]="{'address-item-even': i % 2 === 0, 'address-item-odd': i % 2 !== 0}">
