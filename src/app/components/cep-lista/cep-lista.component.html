@@ -12,8 +12,12 @@
       <label for="logradouro">Logradouro:</label>
       <input type="text" id="logradouro" class="input logradouro-input" [(ngModel)]="logradouro" (focus)="campoSelecionado('logradouro')" (blur)="campoDesselecionado('logradouro')" [ngClass]="{'campo-invalido': !logradouro && exibirMensagemLogradouro, 'campo-selecionado': campoSelecionadoId === 'logradouro'}">
       <span *ngIf="!logradouro && exibirMensagemLogradouro" class="campo-obrigatorio">Campo obrigatório</span>
-      <button class="button pesquisa-button" (click)="validarPreenchimento()">Pesquisar</button>
-      <button class="button" (click)="pesquisarPorCep()">Pesquisar Cep</button>
+      <button class="button pesquisa-button" (click)="validarPreenchimento()">
+        <i class="fas fa-search"></i> Pesquisar
+      </button>
+      <button class="button" (click)="pesquisarPorCep()">
+        <i class="fas fa-search"></i> Pesquisar por Cep
+      </button>
     </div>
   </div>
   
