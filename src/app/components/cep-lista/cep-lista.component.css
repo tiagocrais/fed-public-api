@@ -1,9 +1,11 @@
+@import "~@fortawesome/fontawesome-free/css/all.css";
+
 .container {
     margin: 20px;
   }
   
   .title-background {
-    background-color: #4CAF50;
+    background-color: #4c66af;
     padding: 10px;
   }
   
@@ -46,7 +48,7 @@
   
   .button {
     padding: 5px 10px;
-    background-color: #4CAF50;
+    background-color: #4ca8af;
     color: white;
     border: none;
     cursor: pointer;
@@ -54,7 +56,7 @@
   }
   
   .button:hover {
-    background-color: #45a049;
+    background-color: #4c66af;
   }
   
   .address-list {
@@ -100,5 +102,33 @@
   .campo-selecionado {
     border: 1px solid blue;
     background-color: #E6F3FF;
+  }
+
+  .filter-container {
+    margin-bottom: 10px;
+  }
+  
+  .filter-input {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+  }
+  
+  .filter-button {
+    padding: 5px 10px;
+    background-color: #4ca8af;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    margin-left: 5px;
+  }
+  
+  .filter-button:hover {
+    background-color: #4c66af;
   }
   

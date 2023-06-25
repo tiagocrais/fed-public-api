@@ -19,6 +19,8 @@ export class CepListaComponent implements OnInit {
   exibirMensagemCidade: boolean = false;
   exibirMensagemLogradouro: boolean = false;
   campoSelecionadoId: string = '';
+  filtro: string = '';
+  enderecosSalvos: EnderecoResponse[] = [];
 
   constructor(private http: HttpClient, private router: Router) {}
 
@@ -64,9 +66,10 @@ export class CepListaComponent implements OnInit {
 
   consultarEndereco() {
 
-    if (this.erro || this.enderecos) {
+    if (this.erro || this.enderecos || this.filtro) {
       this.erro = '';
       this.enderecos = [];
+      this.filtro = '';
     }
 
     const apiUrl = `/api/consulta/cep/${this.estado}/${this.cidade}/${this.logradouro}`;
@@ -74,6 +77,7 @@ export class CepListaComponent implements OnInit {
     this.http.get(apiUrl)
     .subscribe((data: any) => {
       this.enderecos = data;
+      this.enderecosSalvos = this.enderecos;
     },
     (error) => {
       
@@ -85,4 +89,19 @@ export class CepListaComponent implements OnInit {
     
     this.router.navigate(['']);
   }
+
+  aplicarFiltro() {
+
+    const filtroLowerCase = this.filtro.toLowerCase();
+    this.enderecos = this.enderecos.filter((endereco: EnderecoResponse) => {
+      const ruaLowerCase = endereco.rua.toLowerCase();
+      return ruaLowerCase.includes(filtroLowerCase);
+
+    })
+  }
+
+  limparFiltro() {
+    this.enderecos = this.enderecosSalvos;
+  }
+
 }

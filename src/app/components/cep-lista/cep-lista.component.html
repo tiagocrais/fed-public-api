@@ -12,13 +12,24 @@
       <label for="logradouro">Logradouro:</label>
       <input type="text" id="logradouro" class="input logradouro-input" [(ngModel)]="logradouro" (focus)="campoSelecionado('logradouro')" (blur)="campoDesselecionado('logradouro')" [ngClass]="{'campo-invalido': !logradouro && exibirMensagemLogradouro, 'campo-selecionado': campoSelecionadoId === 'logradouro'}">
       <span *ngIf="!logradouro && exibirMensagemLogradouro" class="campo-obrigatorio">Campo obrigatório</span>
-      <button class="button pesquisa-button" (click)="validarPreenchimento()">Pesquisar</button>
-      <button class="button" (click)="pesquisarPorCep()">Pesquisar Cep</button>
+      <button class="button pesquisa-button" (click)="validarPreenchimento()">
+        <i class="fas fa-search"></i> Pesquisar
+      </button>
+      <button class="button" (click)="pesquisarPorCep()">
+        <i class="fas fa-search"></i> Pesquisar por Cep
+      </button>
     </div>
   </div>
   
   <div *ngIf="enderecos && enderecos.length > 0 && !erro" class="container">
     <h3 class="sub-title">Resultados da Pesquisa:</h3>
+    <div class="filter-container">
+      <input type="text" [(ngModel)]="filtro" placeholder="Filtrar rua" class="filter-input">
+      <button (click)="aplicarFiltro()" class="button filter-button">Filtrar</button>
+      <button (click)="limparFiltro()" class="button filter-button">
+        <i class="fas fa-broom"></i>
+      </button>
+    </div>
     <ul class="address-list">
       <li *ngFor="let endereco of enderecos; let i = index" class="address-item" [ngClass]="{'address-item-even': i % 2 === 0, 'address-item-odd': i % 2 !== 0}">
         <p><strong>CEP:</strong> {{ endereco.cep }}</p>
