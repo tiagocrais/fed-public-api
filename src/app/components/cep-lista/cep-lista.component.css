@@ -3,7 +3,7 @@
   }
   
   .title-background {
-    background-color: #4CAF50;
+    background-color: #4c66af;
     padding: 10px;
   }
   
@@ -46,7 +46,7 @@
   
   .button {
     padding: 5px 10px;
-    background-color: #4CAF50;
+    background-color: #4ca8af;
     color: white;
     border: none;
     cursor: pointer;
@@ -54,7 +54,7 @@
   }
   
   .button:hover {
-    background-color: #45a049;
+    background-color: #4c66af;
   }
   
   .address-list {
@@ -116,7 +116,7 @@
   
   .filter-button {
     padding: 5px 10px;
-    background-color: #4CAF50;
+    background-color: #4ca8af;
     color: white;
     border: none;
     border-radius: 3px;
@@ -126,6 +126,6 @@
   }
   
   .filter-button:hover {
-    background-color: #45a049;
+    background-color: #4c66af;
   }
   
