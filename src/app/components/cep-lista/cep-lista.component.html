@@ -20,8 +20,9 @@
   <div *ngIf="enderecos && enderecos.length > 0 && !erro" class="container">
     <h3 class="sub-title">Resultados da Pesquisa:</h3>
     <div class="filter-container">
-      <input type="text" [(ngModel)]="filtro" placeholder="Filtrar endereços" class="filter-input">
+      <input type="text" [(ngModel)]="filtro" placeholder="Filtrar rua" class="filter-input">
       <button (click)="aplicarFiltro()" class="button filter-button">Filtrar</button>
+      <button (click)="limparFiltro()" class="button filter-button">Limpar</button>
     </div>
     <ul class="address-list">
       <li *ngFor="let endereco of enderecos; let i = index" class="address-item" [ngClass]="{'address-item-even': i % 2 === 0, 'address-item-odd': i % 2 !== 0}">
