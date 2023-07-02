@@ -52,4 +52,9 @@ export class CepComponent implements OnInit{
     
     this.router.navigate(['/lista']);
   }
+
+  irHome() {
+
+    this,this.router.navigate(['']);
+  }
 }

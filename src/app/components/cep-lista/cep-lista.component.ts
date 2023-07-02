@@ -90,6 +90,11 @@ export class CepListaComponent implements OnInit {
     this.router.navigate(['/cep']);
   }
 
+  irHome() {
+
+    this,this.router.navigate(['']);
+  }
+
   aplicarFiltro() {
 
     const filtroLowerCase = this.filtro.toLowerCase();

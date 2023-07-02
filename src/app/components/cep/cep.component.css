@@ -58,6 +58,10 @@
     margin-left: 10px;
   }
 
+  .button-tertiary {
+    margin-left: 10px;
+  }
+
   .button:hover {
     background-color: #4c66af;
   }
