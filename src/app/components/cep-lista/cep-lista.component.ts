@@ -87,7 +87,7 @@ export class CepListaComponent implements OnInit {
 
   pesquisarPorCep() {
     
-    this.router.navigate(['']);
+    this.router.navigate(['/cep']);
   }
 
   aplicarFiltro() {
