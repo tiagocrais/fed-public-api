@@ -30,7 +30,7 @@ export class CepComponent implements OnInit{
 
     if (this.cep && this.cep.length === 8) {
 
-      const apiUrl = `/api/consulta/cep/${this.cep}`;
+      const apiUrl = `/api/public/consulta/cep/${this.cep}`;
       this.http.get(apiUrl).subscribe(
         (data: any) => {
           this.endereco = data;
