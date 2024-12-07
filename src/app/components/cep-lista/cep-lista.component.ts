@@ -72,7 +72,7 @@ export class CepListaComponent implements OnInit {
       this.filtro = '';
     }
 
-    const apiUrl = `/api/consulta/cep/${this.estado}/${this.cidade}/${this.logradouro}`;
+    const apiUrl = `/api/public/consulta/cep/${this.estado}/${this.cidade}/${this.logradouro}`;
 
     this.http.get(apiUrl)
     .subscribe((data: any) => {
